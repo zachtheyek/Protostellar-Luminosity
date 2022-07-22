@@ -81,4 +81,4 @@ def make_plot(df, wavelength, fig, ax):
         Y = X**m * 10**b
         ax[row, col].plot(X, Y, c='k')
         # Add legend
-        ax[row][col].legend([f'$F = L^{{{m:.2f}\pm{unc_m:.2f}}} \cdot 10^{{{b:.2f}\pm{unc_b:.2f}}}$'], loc='best')
+        ax[row][col].legend([f'$F = L^{{{m:.2f}}} \cdot 10^{{{b:.2f}}}$'], loc='best')
