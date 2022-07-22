@@ -1,6 +1,7 @@
 import numpy as np
 import statsmodels.api as sm
 from scipy.stats import chisquare, pearsonr
+from decimal import Decimal
 
 def check_nan(df):
     print(f'Percentage of missing values in each column:\n\n{round(df.isnull().sum().sort_values(ascending=False) / len(df.index) * 100, 2)}\n')
@@ -34,7 +35,10 @@ def corr_coef(x, y, log_x, log_y):
 
 def make_plot(df, wavelength, fig, ax):
     # Customize plot
-    fig.suptitle(f'Flux vs Internal Luminosity: All wavelengths')
+    if wavelength == 'All':
+        fig.suptitle(f'Flux vs Internal Luminosity: All wavelengths')
+    else:
+        fig.suptitle(f'Flux vs Internal Luminosity: {Decimal(wavelength)} microns')
     # Customize axes
     ax[0][0].set_xscale('log')
     ax[0][0].set_yscale('log')
@@ -49,7 +53,6 @@ def make_plot(df, wavelength, fig, ax):
                 '1a': (0, 1), 
                 '1b': (1, 0), 
                 'All': (1, 1)}
-    # Repeat the following process for all 4 subplots
     for class_name in class_map:
         # Partition data based on class
         if class_name == 'All':
@@ -68,7 +71,7 @@ def make_plot(df, wavelength, fig, ax):
             corr.write(f'{class_name}, {wavelength}, {lin_rcs}, {log_rcs}, {lin_corr}, {log_corr}\n')
         # Make plots
         row, col = class_map[class_name]
-        ax[row, col].scatter(x, y)
+        ax[row, col].scatter(x, y, s=6, marker='+', label='_nolegend_')
         if class_name == 'All':
             ax[row, col].set_title('All classes')
         else:
@@ -76,6 +79,6 @@ def make_plot(df, wavelength, fig, ax):
         # Visualize linear regression
         X = np.linspace(1e-1, 1e5)
         Y = X**m * 10**b
-        ax[row, col].plot(X, Y, color='k')
+        ax[row, col].plot(X, Y, c='k')
         # Add legend
         ax[row][col].legend([f'$F = L^{{{m:.2f}\pm{unc_m:.2f}}} \cdot 10^{{{b:.2f}\pm{unc_b:.2f}}}$'], loc='best')
