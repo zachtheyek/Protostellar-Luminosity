@@ -38,12 +38,12 @@ def make_plot(df, wavelength, fig, ax):
     if wavelength == 'All':
         fig.suptitle(f'Flux vs Internal Luminosity: All wavelengths')
     else:
-        fig.suptitle(f'Flux vs Internal Luminosity: {Decimal(wavelength)} microns')
+        fig.suptitle(f'Flux vs Internal Luminosity: {Decimal(wavelength):.2e} microns')
     # Customize axes
-    ax[0][0].set_xscale('log')
-    ax[0][0].set_yscale('log')
-    ax[0][0].set_xlim([1e-1, 1e5])
-    ax[0][0].set_ylim([1e-12, 1e-5])
+    ax[0, 0].set_xscale('log')
+    ax[0, 0].set_yscale('log')
+    ax[0, 0].set_xlim([1e-1, 1e5])
+    ax[0, 0].set_ylim([1e-12, 1e-5])
     ax[0, 0].set_ylabel('Flux (erg cm$^{-2}$ s$^{-1}$)')
     ax[1, 0].set_ylabel('Flux (erg cm$^{-2}$ s$^{-1}$)')
     ax[1, 0].set_xlabel('Internal Luminosity (L$_\odot$)')
