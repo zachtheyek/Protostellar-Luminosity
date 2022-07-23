@@ -27,3 +27,5 @@ We find that for class 0 objects, `dfit` overpredicts by roughly 1.0 - 2.2; for 
 Finally, using the correlation coefficients (in `log10` space) as a function of wavelength, a conservative threshold of 0.9 yields an optimal wavelength range of $10^1$ - $10^2$ microns.
 
 ![](src/images/optimal_wavelength_range.jpg)
+
+*_relevant analyses alongside detailed documentation can be found in `src/`_
