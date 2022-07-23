@@ -1,2 +1,8 @@
-# Ignore data directory (size too large)
-data
+# Ignore master file (too large)
+data/master_file.csv
+
+# Ignore Figures directory (too large)
+data/Figures
+
+# Ignore master plot (too large)
+fig/flux_vs_lint_master.eps
