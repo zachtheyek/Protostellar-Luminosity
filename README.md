@@ -28,4 +28,4 @@ Finally, using the correlation coefficients (in `log10` space) as a function of 
 
 ![](src/images/optimal_wavelength_range.jpg)
 
-*_relevant analyses alongside detailed documentation can be found in `src/`_
+*_relevant analyses alongside detailed documentation can be found in `src/`; data available upon request_
