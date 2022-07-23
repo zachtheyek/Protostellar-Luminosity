@@ -20,7 +20,7 @@ Intriguingly, while slightly weaker for class 1a and 1b objects, this correlatio
 
 Next, we obtain an error factor by normalizing measured flux values provided by `dfit` against expected flux values from `yfit`, where the subsequent correction factor is simply the inverse of this number. Note, this factor is a function of $F$. 
 
-We find that for class 0 objects, `dfit` overpredicts by roughly 1.0 - 2.2; for class 1a objects, roughly 2.7 - 3.1; for class 1b objects, roughly 3.4 - 4.9.
+We find that for class 0 objects, `dfit` overpredicts by roughly 1.0 - 2.2 w.r.t. `yfit`; for class 1a objects, roughly 2.7 - 3.1 w.r.t. `yfit`; for class 1b objects, roughly 3.4 - 4.9 w.r.t. `yfit`.
 
 ![](src/images/d-fit_error.jpg)
 
