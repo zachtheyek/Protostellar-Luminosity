@@ -24,7 +24,9 @@ We find that for class 0 objects, `dfit` overpredicts by roughly 1.0 - 2.2; for 
 
 ![](src/images/d-fit_error.jpg)
 
-Finally, viewing the correlation coefficients (computed in `log10` space) as a function of wavelength, we set a conservative threshold of 0.9, which yields an optimal wavelength range of $10^1$ - $10^2$ microns. In other words, any measurement of internal luminosity for embedded, low-luminosity targets can be performed within this range with a high-degree of confidence.
+Finally, viewing the correlation coefficients (computed in `log10` space) as a function of wavelength, we set a conservative threshold of 0.9, which yields an optimal wavelength range of $10^1$ - $10^2$ microns. 
+
+In other words, any measurement of internal luminosity for embedded, low-luminosity targets can be performed within this range with a high-degree of confidence.
 
 ![](src/images/optimal_wavelength_range.jpg)
 
