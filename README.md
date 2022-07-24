@@ -34,4 +34,4 @@ Naturally, lower correlation coefficient thresholds yield larger observing windo
 
 ![](src/images/optimal_wavelength_range.jpg)
 
-*_relevant analyses alongside detailed documentation can be found in `src/`; higher resolution images can be found in `fig/`; raw data available upon request_
+*_relevant analyses alongside detailed documentation can be found in `src/`; higher resolution images can be found in `fig/`; raw data available upon request._
