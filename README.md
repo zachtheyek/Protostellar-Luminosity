@@ -30,7 +30,7 @@ Finally, we expand our considerations to all available wavelengths; when viewing
 
 In other words, any measurement of internal luminosity for embedded, low-luminosity targets can be performed within this range with a high-degree of confidence, using the appropriate linear fit provided by `yfit`.
 
-Naturally, lower correlation coefficient thresholds yield larger observing windows, but introduce more uncertainty.
+Naturally, lower correlation coefficient thresholds yield larger observing windows, but introduce more uncertainty (and vice versa for higher thresholds).
 
 ![](src/images/optimal_wavelength_range.jpg)
 
