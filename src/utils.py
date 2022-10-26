@@ -36,9 +36,9 @@ def corr_coef(x, y, log_x, log_y):
 def make_plot(df, wavelength, fig, ax):
     # Customize plot
     if wavelength == 'All':
-        fig.suptitle(f'Flux vs Internal Luminosity: All wavelengths')
+        fig.suptitle(f'All wavelengths')
     else:
-        fig.suptitle(f'Flux vs Internal Luminosity: {Decimal(wavelength):.2e} microns')
+        fig.suptitle(f'{Decimal(wavelength):.2f} microns')
     # Customize axes
     ax[0, 0].set_xscale('log')
     ax[0, 0].set_yscale('log')
