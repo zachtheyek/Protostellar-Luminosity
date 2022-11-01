@@ -18,13 +18,13 @@ Intriguingly, while slightly weaker for class 1a and 1b objects, this correlatio
 
 ![](src/images/flux_vs_lint_7.36e+1.jpg)
 
-Next, at the same wavelength, we obtain an error factor by normalizing measured flux values provided by `dfit` against expected flux values from `yfit`, where the subsequent correction factor is simply the inverse of this number. Note, this factor is a function of expected flux $F_\text{yfit}$. 
+Next, we computed the percent error introduced by using `dfit` as opposed to `yfit`, using the data closest to 70 microns.
 
-We find that for class 0 objects, `dfit` overpredicts by roughly 1.0 - 2.2 w.r.t. `yfit`; for class 1a objects, roughly 2.7 - 3.1 w.r.t. `yfit`; for class 1b objects, roughly 3.4 - 4.9 w.r.t. `yfit`. 
+We find that for class 0 objects, `dfit` underpredicts by roughly 2% - 50%; roughly 60% - 65% for class 1a objects; roughly 68% - 78% for class 1b objects.
 
-Thus, the higher the expected flux, and the older the protostellar object, the larger the error in measured flux from `dfit`.
+Thus, the higher the expected flux, and the older the protostellar object, the larger the error in predicted luminosity from `dfit`.
 
-![](src/images/d-fit_error.jpg)
+![](src/images/dfit_error.jpg)
 
 Finally, we expand our considerations to all available wavelengths; when viewing the correlation coefficients between $F$ and $L_\text{int}$ as a function of wavelength, we set a conservative threshold of 0.9, yielding an optimal wavelength range of $10^1$ - $10^2$ microns. 
 
