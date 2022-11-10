@@ -1,5 +1,6 @@
 import numpy as np
 import statsmodels.api as sm
+from statistics import stdev
 from scipy.stats import chisquare, pearsonr
 from decimal import Decimal
 
@@ -15,6 +16,12 @@ def lin_reg(x, y):
     results = model.fit()
     # Return slope, unc_slope, intercept, unc_intercept
     return results.params[1], results.bse[1], results.params[0], results.bse[0]
+
+def model_var(x, y, m, b):
+    # Variance = log(predicted luminosity) - log(model luminosity)
+    variance = np.log10(y.values**(1 / m) * 10**(-b / m) / x.values)
+    # Return std. dev. (1 sigma)
+    return stdev(variance)
 
 def chi_sq(x, y, log_x, log_y, m, b):
     # Compute reduced-chi squared (linear space)
@@ -63,15 +70,17 @@ def make_plot(df, wavelength, fig, ax):
             log_x, log_y = df[df['Class'] == class_name]['log(L_int)'], df[df['Class'] == class_name]['log(Flux)']
         # Compute relevant metrics
         m, unc_m, b, unc_b = lin_reg(log_x, log_y)
+        model_variance = model_var(x, y, m, b)
         lin_rcs, log_rcs = chi_sq(x, y, log_x, log_y, m, b)
         lin_corr, log_corr = corr_coef(x, y, log_x, log_y)
         # Write results
-        with open('lin_coef.csv', 'a') as coef, open('corr_coef.csv', 'a') as corr:
+        with open('lin_coef.csv', 'a') as coef, open('corr_coef.csv', 'a') as corr, open('model_var.csv', 'a') as var:
             coef.write(f'{class_name}, {wavelength}, {m}, {unc_m}, {b}, {unc_b}\n')
             corr.write(f'{class_name}, {wavelength}, {lin_rcs}, {log_rcs}, {lin_corr}, {log_corr}\n')
+            var.write(f'{class_name}, {wavelength}, {model_variance}\n')
         # Make plots
         row, col = class_map[class_name]
-        ax[row, col].scatter(x, y, s=6, marker='+', label='_nolegend_')
+        ax[row, col].scatter(x, y, marker='+', s=6, label='_nolegend_')
         if class_name == 'All':
             ax[row, col].set_title('All classes')
         else:
