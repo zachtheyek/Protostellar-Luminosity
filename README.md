@@ -38,4 +38,12 @@ We find that for a somewhat arbitrary threshold of `0.333`, we obtain an optimal
 
 ![](src/images/model_var.jpg)
 
+# Conclusion
+1. Determine if the original 70 micron correlation still holds for older protostellar systems (so-called class 1a and 1b objects). 
+    - Yes, though the correlation is _slightly_ weaker w.r.t. class 0
+2. Compute a correction factor for studies that misused the [Dunham _et. al._ (2008)](https://ui.adsabs.harvard.edu/abs/2008ApJS..179..249D/abstract) result.
+    - `2% - 78%` percent error, depending on the input flux and protostellar age
+3. Provide a suite of observing windows (in wavelength space) where $F$ and $L_\text{int}$ remain sufficiently correlated, rather than a singular entry point.
+    - Between $10^1$ and $10^2$ microns
+
 *_relevant analyses alongside detailed documentation can be found in `src/`; higher resolution images can be found in `fig/`; raw data available upon request._
